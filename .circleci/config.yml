@@ -29,6 +29,10 @@ jobs:
           root: ~/
           paths:
             - output.txt
+      - run: return 1
+      - run:
+         command: echo "tests failed"
+         when: on_fail
   print_output_file:
     docker:
       - image: circleci/node:13.8.0
